@@ -1,11 +1,13 @@
-function initMap() {
-    const map = document.getElementById("map");
+let map;
 
-    const TOKYO_TOWER = { lat: 35.6585769, lng: 139.7454506 };
-    const OPT = {
-        zoom: 13,
-        center: TOKYO_TOWER,
-    };
+async function initMap() {
+    //@ts-ignore
+    const { Map } = await google.maps.importLibrary("maps");
 
-    const mapObj = new google.maps.Map(map, OPT);
+    map = new Map(document.getElementById("map"), {
+        center: { lat: -34.397, lng: 150.644 },
+        zoom: 8,
+    });
 }
+
+initMap();

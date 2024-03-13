@@ -14,9 +14,12 @@ class PostController extends Controller
         return view('posts.index', compact('posts'));
     }
 
-    public function create()
+    public function create(Request $request)
     {
-        return view('posts.create');
+        $lat = $request->query('lat');
+        $lng = $request->query('lng');
+
+        return view('posts.create', compact('lat', 'lng'));
     }
 
     public function store(Request $request)

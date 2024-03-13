@@ -1,5 +1,6 @@
 let map;
 let marker = null;
+let position;
 
 async function initMap() {
     //@ts-ignore
@@ -25,6 +26,19 @@ async function placeMarkerAndPanTo(latLng, map) {
         position: latLng,
     });
     map.panTo(latLng);
+
+    position = latLng;
 }
 
 initMap();
+
+const onCreateButtonClick = () => {
+    const lat = position.lat();
+    const lng = position.lng();
+
+    const url = new URL("posts/create", window.location.href);
+    url.searchParams.set("lat", lat);
+    url.searchParams.set("lng", lng);
+
+    location.href = url;
+};

@@ -10,7 +10,7 @@
         <div class="card-header">投稿一覧</div>
 
         <div class="card-body">
-          <button type="button" class="btn btn-primary mb-3 d-block w-100" onclick="location.href='{{ route('posts.create') }}'">
+          <button type="button" class="btn btn-primary mb-3 d-block w-100" onclick="onCreateButtonClick()">
             新規投稿
           </button>
           <div class="table-resopnsive">

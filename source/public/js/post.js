@@ -1,14 +1,13 @@
-let map;
-let marker = null;
-
 const position = { lat: -34.397, lng: 150.644 };
+
+let marker;
 
 async function initMap() {
     //@ts-ignore
     const { Map } = await google.maps.importLibrary("maps");
     const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
-    map = new Map(document.getElementById("map"), {
+    const map = new Map(document.getElementById("map"), {
         center: position,
         zoom: 8,
         mapId: "DEMO_MAP_ID",
@@ -24,7 +23,7 @@ async function initMap() {
     });
 }
 
-async function placeMarkerAndPanTo(latLng, map) {
+function placeMarkerAndPanTo(latLng, map) {
     marker.position = latLng;
     map.panTo(latLng);
 

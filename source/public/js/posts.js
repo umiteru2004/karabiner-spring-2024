@@ -21,6 +21,27 @@ async function initMap() {
         map,
         position: position,
     });
+
+    posts.forEach((post) => {
+        const postPosition = {
+            lat: parseFloat(post.lat),
+            lng: parseFloat(post.lng),
+        };
+
+        const postIcon = document.createElement("img");
+        postIcon.src = "/img/comment.svg";
+
+        const postMarker = new AdvancedMarkerElement({
+            map,
+            position: postPosition,
+            content: postIcon,
+        });
+
+        postMarker.addListener("click", () => {
+            const postUrl = new URL(`posts/${post.id}`, window.location.href);
+            location.href = postUrl;
+        });
+    });
 }
 
 function placeMarkerAndPanTo(latLng, map) {
@@ -43,3 +64,5 @@ const onCreateButtonClick = () => {
 
     location.href = url;
 };
+
+console.log(posts);

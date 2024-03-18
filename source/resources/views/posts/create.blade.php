@@ -21,18 +21,8 @@
                                 <textarea name="body" id="body" style="resize: none; height: 200px; width: 100%">{{ old('body') }}</textarea>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="lat" class="col-md-2 col-form-label text-md-right">緯度</label>
-                            <div class="col-md-9">
-                                <input id="lat" type="number" step="0.000001" class="form-control" name="lat" value="{{ old('lat') }}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="lng" class="col-md-2 col-form-label text-md-right">経度</label>
-                            <div class="col-md-9">
-                                <input id="lng" type="number" step="0.000001" class="form-control" name="lng" value="{{ old('lng') }}">
-                            </div>
-                        </div>
+                        <input id="lat" type="number" step="0.000000000000001" class="form-control" name="lat" value="{{ $lat }}" hidden>
+                        <input id="lng" type="number" step="0.000000000000001" class="form-control" name="lng" value="{{ $lng }}" hidden>
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="button" class="btn btn-secondary" onClick="history.back()">戻る</button>

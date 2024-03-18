@@ -42,6 +42,10 @@
 </div>
 
 <script>
+  const posts = @json($posts);
+</script>
+
+<script>
   (g => {
     var h, a, k, p = "The Google Maps JavaScript API",
       c = "google",

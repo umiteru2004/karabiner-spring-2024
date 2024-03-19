@@ -3,43 +3,9 @@
 @section('body')
 <div id="map" style="width: 100%; height: 100vh;">
 </div>
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header">投稿一覧</div>
-
-        <div class="card-body">
-          <button type="button" class="btn btn-primary mb-3 d-block w-100" onclick="onCreateButtonClick()">
-            新規投稿
-          </button>
-          <div class="table-resopnsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>タイトル</th>
-                  <th>本文</th>
-                  <th>状態</th>
-                </tr>
-              </thead>
-              <tbody>
-                @if(isset($posts))
-                @foreach ($posts as $post)
-                <tr>
-                  <td><a href="{{ route('posts.show', $post->id) }}">{{ $post->title }}</a></td>
-                  <td>{{ $post->body }}</td>
-                  <td>{{ $post->status }}</td>
-                </tr>
-                @endforeach
-                @endif
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<button type="button" class="create-button" onclick="onCreateButtonClick()">
+  <img src="{{ asset('/img/add-location.svg') }}" class="create-icon">
+</button>
 
 <script>
   const posts = @json($posts);

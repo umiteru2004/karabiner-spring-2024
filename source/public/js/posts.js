@@ -64,5 +64,3 @@ const onCreateButtonClick = () => {
 
     location.href = url;
 };
-
-console.log(posts);

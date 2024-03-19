@@ -63,3 +63,10 @@
 .post-form-create-button {
     background-color: #776cb9;
 }
+
+.post-show-button {
+    width: 200px;
+    height: 64px;
+    border: none;
+    border-radius: 32px;
+}

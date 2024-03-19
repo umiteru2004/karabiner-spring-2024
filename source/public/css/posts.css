@@ -1,0 +1,16 @@
+.create-button {
+    position: fixed;
+    bottom: 32px;
+    left: 32px;
+    width: 64px;
+    height: 64px;
+    border: none;
+    border-radius: 16px;
+    background-color: white;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.create-icon {
+    width: 80%;
+    height: 80%;
+}
